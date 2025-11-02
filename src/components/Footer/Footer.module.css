@@ -1,0 +1,81 @@
+.footer {
+  background: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-7)
+  );
+  border-top: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  padding: 3rem 0 2rem;
+  margin-top: auto;
+}
+
+.brandText {
+  background: linear-gradient(
+    45deg,
+    var(--mantine-color-blue-6),
+    var(--mantine-color-violet-6)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  line-height: 1.6;
+}
+
+.sectionTitle {
+  color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-gray-3));
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-gray-5));
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.link:hover {
+  color: var(--mantine-color-blue-6);
+  transform: translateX(4px);
+}
+
+.socialIcon {
+  transition: all 0.2s ease;
+}
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+  background: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-dark-5)
+  );
+}
+
+.heart {
+  color: var(--mantine-color-red-6);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10%,
+  30% {
+    transform: scale(1.2);
+  }
+  20%,
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2rem 0 1.5rem;
+  }
+}

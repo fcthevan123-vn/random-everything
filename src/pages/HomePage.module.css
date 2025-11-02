@@ -1,0 +1,137 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    135deg,
+    light-dark(#f8f9fa, #1a1b1e) 0%,
+    light-dark(#e7f5ff, #25262b) 100%
+  );
+}
+
+.hero {
+  padding-top: 140px;
+  padding-bottom: 60px;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 900;
+  background: linear-gradient(
+    45deg,
+    var(--mantine-color-blue-6),
+    var(--mantine-color-violet-6),
+    var(--mantine-color-pink-6)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradient 5s ease infinite;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.subtitle {
+  font-weight: 500;
+  line-height: 1.6;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
+}
+
+.ctaButton {
+  background: linear-gradient(
+    45deg,
+    var(--mantine-color-blue-6),
+    var(--mantine-color-violet-6)
+  );
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1.5rem 3rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.featureCard {
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background: light-dark(white, var(--mantine-color-dark-6));
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: light-dark(
+    var(--mantine-color-blue-2),
+    var(--mantine-color-blue-9)
+  );
+}
+
+.iconWrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.icon {
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.tryButton {
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.tryButton:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .ctaButton {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+}
