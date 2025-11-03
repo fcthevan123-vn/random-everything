@@ -35,6 +35,8 @@ export function LanguageSwitcher({
       position="bottom-end"
       transitionProps={{ transition: "pop-top-right" }}
       withArrow
+      zIndex={1000001}
+      closeOnItemClick={true}
     >
       <Menu.Target>
         <ActionIcon

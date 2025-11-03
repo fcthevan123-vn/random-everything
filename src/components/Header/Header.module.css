@@ -88,4 +88,28 @@
   .logoText {
     font-size: 1rem;
   }
+
+  .inner {
+    padding: 0 1rem; /* Add horizontal padding on mobile */
+  }
+
+  /* Ensure proper alignment on mobile */
+  .inner > div {
+    width: 100%;
+    justify-content: space-between !important;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .inner {
+    padding: 0 0.75rem; /* Slightly less padding on very small screens */
+  }
+
+  .logoText {
+    font-size: 0.9rem;
+  }
 }

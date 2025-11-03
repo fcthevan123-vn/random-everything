@@ -89,6 +89,7 @@ const translations = {
     "language.english": "English",
     "language.vietnamese": "Tiếng Việt",
     "language.switchTo": "Switch to",
+    "language.label": "Language",
   },
   vi: {
     // Common
@@ -173,6 +174,7 @@ const translations = {
     "language.english": "English",
     "language.vietnamese": "Tiếng Việt",
     "language.switchTo": "Chuyển sang",
+    "language.label": "Ngôn ngữ",
   },
 };
 

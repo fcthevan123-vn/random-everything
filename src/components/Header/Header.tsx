@@ -133,8 +133,38 @@ export default function Header() {
               </Button>
             ))}
 
-            <Box mt="md">
-              <LanguageSwitcher size="lg" variant="subtle" />
+            {/* Mobile Actions */}
+            <Box
+              mt="xl"
+              pt="md"
+              style={{ borderTop: "1px solid var(--mantine-color-gray-3)" }}
+            >
+              <Stack gap="sm">
+                <Group justify="space-between" px="md">
+                  <Text size="sm" fw={500} c="dimmed">
+                    {t("language.label")}
+                  </Text>
+                  <LanguageSwitcher size="lg" variant="subtle" />
+                </Group>
+
+                <Group justify="space-between" px="md">
+                  <Text size="sm" fw={500} c="dimmed">
+                    Theme
+                  </Text>
+                  <ActionIcon
+                    onClick={() => toggleColorScheme()}
+                    variant="subtle"
+                    size="lg"
+                    aria-label="Toggle color scheme"
+                  >
+                    {colorScheme === "dark" ? (
+                      <IconSun size={20} />
+                    ) : (
+                      <IconMoon size={20} />
+                    )}
+                  </ActionIcon>
+                </Group>
+              </Stack>
             </Box>
           </Stack>
         </ScrollArea>

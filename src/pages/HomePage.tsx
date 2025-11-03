@@ -110,8 +110,8 @@ export default function HomePage() {
               {t("home.subtitle")}
             </Text>
             <Button
-              size="lg"
-              radius="md"
+              size="xl"
+              radius="lg"
               className={classes.ctaButton}
               onClick={scrollToFeatures}
             >
