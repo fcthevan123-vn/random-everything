@@ -43,8 +43,8 @@ export default function Header() {
     <Box className={classes.headerWrapper}>
       <Box className={classes.header}>
         <Container size="xl" className={classes.inner}>
-          <Group justify="space-between" h="100%">
-            {/* Logo */}
+          <Group justify="space-between" h="100%" w="100%">
+            {/* Logo - Left Side */}
             <Group
               gap="xs"
               className={classes.logo}
@@ -56,8 +56,8 @@ export default function Header() {
               </Text>
             </Group>
 
-            {/* Desktop Navigation */}
-            <Group gap="sm" visibleFrom="md" className={classes.desktopNav}>
+            {/* Navigation & Actions - Right Side */}
+            <Group gap="md" visibleFrom="md">
               {navLinks.slice(0, 5).map((link) => (
                 <Button
                   key={link.path}
@@ -69,10 +69,7 @@ export default function Header() {
                   {link.label}
                 </Button>
               ))}
-            </Group>
 
-            {/* Actions */}
-            <Group gap="sm">
               <ActionIcon
                 onClick={() => toggleColorScheme()}
                 variant="subtle"
@@ -86,14 +83,15 @@ export default function Header() {
                   <IconMoon size={20} />
                 )}
               </ActionIcon>
-
-              <Burger
-                opened={drawerOpened}
-                onClick={toggleDrawer}
-                hiddenFrom="md"
-                size="sm"
-              />
             </Group>
+
+            {/* Mobile Menu */}
+            <Burger
+              opened={drawerOpened}
+              onClick={toggleDrawer}
+              hiddenFrom="md"
+              size="sm"
+            />
           </Group>
         </Container>
       </Box>

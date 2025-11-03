@@ -60,11 +60,6 @@
   -webkit-text-fill-color: transparent;
 }
 
-.desktopNav {
-  flex: 1;
-  justify-content: center;
-}
-
 .navButton {
   font-weight: 500;
   transition: all 0.2s ease;
