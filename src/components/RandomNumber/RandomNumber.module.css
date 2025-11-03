@@ -1,0 +1,11 @@
+.container {
+  min-height: 100vh;
+}
+
+.resultBadge {
+  transition: transform 0.2s ease;
+}
+
+.resultBadge:hover {
+  transform: scale(1.05);
+}

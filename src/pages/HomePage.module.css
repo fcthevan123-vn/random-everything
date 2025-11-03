@@ -62,6 +62,11 @@
   padding: 1.5rem 3rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: fit-content;
+  line-height: 1.5;
+  height: auto !important;
+  min-height: 3.5rem;
 }
 
 .ctaButton:hover {
@@ -127,6 +132,8 @@
   .ctaButton {
     font-size: 1rem;
     padding: 1rem 2rem;
+    width: auto;
+    max-width: 100%;
   }
 }
 

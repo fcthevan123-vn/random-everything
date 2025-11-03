@@ -14,23 +14,26 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { IconMoon, IconSun, IconSparkles } from "@tabler/icons-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useLanguage } from "../../contexts/LanguageContext";
+import LanguageSwitcher from "../LanguageSwitcher";
 import classes from "./Header.module.css";
 
 const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Random Number", path: "/random-number" },
-  { label: "Games", path: "/random-games" },
-  { label: "Spin Wheel", path: "/spin-wheel" },
-  { label: "List Picker", path: "/list-picker" },
-  { label: "Password", path: "/password-generator" },
-  { label: "Colors", path: "/color-generator" },
-  { label: "Teams", path: "/team-generator" },
+  { label: "nav.home", path: "/" },
+  { label: "nav.randomNumber", path: "/random-number" },
+  { label: "nav.games", path: "/random-games" },
+  { label: "nav.spinWheel", path: "/spin-wheel" },
+  { label: "nav.listPicker", path: "/list-picker" },
+  { label: "nav.password", path: "/password-generator" },
+  { label: "nav.colors", path: "/color-generator" },
+  { label: "nav.teams", path: "/team-generator" },
 ];
 
 export default function Header() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -66,9 +69,11 @@ export default function Header() {
                   className={classes.navButton}
                   size="sm"
                 >
-                  {link.label}
+                  {t(link.label)}
                 </Button>
               ))}
+
+              <LanguageSwitcher size="lg" variant="subtle" />
 
               <ActionIcon
                 onClick={() => toggleColorScheme()}
@@ -124,9 +129,13 @@ export default function Header() {
                 size="md"
                 className={classes.mobileNavButton}
               >
-                {link.label}
+                {t(link.label)}
               </Button>
             ))}
+
+            <Box mt="md">
+              <LanguageSwitcher size="lg" variant="subtle" />
+            </Box>
           </Stack>
         </ScrollArea>
       </Drawer>

@@ -20,75 +20,70 @@ import {
   IconUsers,
 } from "@tabler/icons-react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import classes from "./HomePage.module.css";
 
 interface Feature {
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  titleKey: string;
+  descKey: string;
   route: string;
   color: string;
 }
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const features: Feature[] = [
     {
       icon: <IconDice6 size={40} stroke={1.5} />,
-      title: "Random Number",
-      description:
-        "Generate random numbers within custom ranges. Perfect for lottery picks, dice rolls, or any numeric randomization.",
+      titleKey: "home.feature.randomNumber.title",
+      descKey: "home.feature.randomNumber.desc",
       route: "/random-number",
       color: "blue",
     },
     {
       icon: <IconCards size={40} stroke={1.5} />,
-      title: "Random Games",
-      description:
-        "Flip coins, roll dice, or draw cards. Classic randomization games with beautiful animations.",
+      titleKey: "home.feature.games.title",
+      descKey: "home.feature.games.desc",
       route: "/random-games",
       color: "red",
     },
     {
       icon: <IconWheel size={40} stroke={1.5} />,
-      title: "Spin Wheel",
-      description:
-        "Create custom decision wheels with your own options. Spin to choose randomly with style!",
+      titleKey: "home.feature.spinWheel.title",
+      descKey: "home.feature.spinWheel.desc",
       route: "/spin-wheel",
       color: "grape",
     },
     {
       icon: <IconListCheck size={40} stroke={1.5} />,
-      title: "List Picker",
-      description:
-        "Pick random items from your custom lists. Great for choosing winners, making decisions, or shuffling.",
+      titleKey: "home.feature.listPicker.title",
+      descKey: "home.feature.listPicker.desc",
       route: "/list-picker",
       color: "teal",
     },
     {
       icon: <IconPassword size={40} stroke={1.5} />,
-      title: "Password & Username",
-      description:
-        "Generate secure passwords and creative usernames. Fully customizable with various options.",
+      titleKey: "home.feature.password.title",
+      descKey: "home.feature.password.desc",
       route: "/password-generator",
       color: "orange",
     },
     {
       icon: <IconPalette size={40} stroke={1.5} />,
-      title: "Color & Gradient",
-      description:
-        "Discover random colors and beautiful gradients. Get HEX, RGB values instantly.",
+      titleKey: "home.feature.colors.title",
+      descKey: "home.feature.colors.desc",
       route: "/color-generator",
       color: "pink",
     },
     {
       icon: <IconUsers size={40} stroke={1.5} />,
-      title: "Team/Group Generator",
-      description:
-        "Randomly divide people into teams or groups. Fair and balanced distribution guaranteed.",
+      titleKey: "home.feature.teams.title",
+      descKey: "home.feature.teams.desc",
       route: "/team-generator",
       color: "violet",
     },
@@ -109,11 +104,10 @@ export default function HomePage() {
         <Center>
           <Stack align="center" gap="xl">
             <Title className={classes.title} order={1}>
-              Random Everything
+              {t("home.title")}
             </Title>
             <Text className={classes.subtitle} size="xl" ta="center" maw={600}>
-              Generate random numbers, cards, passwords, teams, and more —
-              instantly and beautifully.
+              {t("home.subtitle")}
             </Text>
             <Button
               size="lg"
@@ -121,7 +115,7 @@ export default function HomePage() {
               className={classes.ctaButton}
               onClick={scrollToFeatures}
             >
-              Explore All Tools
+              {t("home.cta")}
             </Button>
           </Stack>
         </Center>
@@ -149,10 +143,10 @@ export default function HomePage() {
                       </Box>
                     </Center>
                     <Title order={3} ta="center" mb="sm" size="h3">
-                      {feature.title}
+                      {t(feature.titleKey)}
                     </Title>
                     <Text size="sm" c="dimmed" ta="center">
-                      {feature.description}
+                      {t(feature.descKey)}
                     </Text>
                   </Box>
                   <Button
@@ -163,7 +157,7 @@ export default function HomePage() {
                     onClick={() => navigate(feature.route)}
                     className={classes.tryButton}
                   >
-                    Try it
+                    {t("home.tryIt")}
                   </Button>
                 </Stack>
               </Card>
